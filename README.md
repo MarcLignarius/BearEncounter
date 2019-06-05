@@ -1,5 +1,7 @@
 # Bear Encounter
 
+![Screenshot](https://i.imgur.com/hsVPLo6.png)
+
 #### _JavaScript, 05.31.2019_
 
 #### By _Marc Davies and Reese Lee_
