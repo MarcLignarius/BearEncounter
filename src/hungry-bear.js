@@ -1,18 +1,27 @@
 export class HungryBear {
-
+  // Creates a HungryBear object and sets its properties
   constructor(name) {
     this.name = name;
     this.health = 100;
     this.foodLevel = 10;
   }
 
+  // Makes Satisfaction Level decrease by 1 every second.
   setHunger() {
     setInterval(() => {
       this.foodLevel--;
     }, 1000);
   }
 
-  didYouKillBear() {
+  // Shoots the bear and reduces Health Points by a random amount between 0 and 50.
+  shootBear(Hiker) {
+    var healthLost = Math.floor(Math.random() * Math.floor(50));
+    this.health -= healthLost;
+    Hiker.backpack["shotgun"] -=1;
+  }
+
+  // Checks bear's Health Points and kills bear if Health Points are less than or equal to zero.
+  isBearDead() {
     if (this.health <= 0) {
       return true;
     } else {
@@ -20,86 +29,27 @@ export class HungryBear {
     }
   }
 
-  didYouGetEaten() {
-    if (this.foodLevel > 0) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  shootBear(Hiker) {
-    var healthLost = Math.floor(Math.random() * Math.floor(50));
-    this.health -= healthLost;
-    Hiker.backpack["shotgun"] -=1;
-  }
-
+  // Feeds bear trail mix: Increases Satisfaction Level by 3, reduces trail mix amount by 1.
   feedTrailMix(Hiker) {
-    this.foodLevel += 2;
+    this.foodLevel += 3;
     Hiker.backpack["trailMix"] -= 1;
   }
 
+  // Feeds bear granola bar: Increases Satisfaction Level by 5, reduces granola bar amount by 1.
   feedGranolaBar(Hiker) {
-    this.foodLevel += 3;
+    this.foodLevel += 5;
     Hiker.backpack["granolaBar"] -= 1;
   }
 
-  feedPeanutButterSandwich(Hiker) {
-    this.foodLevel += 4;
-    Hiker.backpack["peanutButterSandwich"] -= 1;
+  // Feeds bear sandwich: Increases Satisfaction Level by 10, reduces sandwich amount by 1.
+  feedSandwich(Hiker) {
+    this.foodLevel += 10;
+    Hiker.backpack["sandwich"] -= 1;
   }
 
-  feedBodyPart(Hiker) {
-    this.foodLevel +=8;
-    Hiker.backpack["bodyParts"] -= 1;
+  // Feeds bear carcass: Increases Satisfaction Level by 20, reduces carcass amount by 1.
+  feedCarcass(Hiker) {
+    this.foodLevel += 20;
+    Hiker.backpack["carcass"] -= 1;
   }
 }
-
-// This is the new code after completing this lesson:
-// https://www.learnhowtoprogram.com/javascript/asynchrony-and-apis/further-exploration-with-closures-in-javascript
-
-// START OF NEW CODE
-
-// export let bear = {
-//   foodLevel: 10,
-//   setHunger: function() {
-//     const hungerInterval = setInterval(() => {
-//       this.foodLevel--;
-//       if (this.didYouGetEaten() == true) {
-//         clearInterval(hungerInterval);
-//         return "You got eaten!";
-//       }
-//     }, 1000);
-//   },
-//   didYouGetEaten: function() {
-//     if (this.foodLevel > 0) {
-//       return false;
-//     } else {
-//       return true;
-//     }
-//   },
-//   feed: function(amount) {
-//     let that = this;
-//     return function(food) {
-//       that.foodLevel += amount
-//       return `The bear ate the ${food}! Food level goes up ${amount}!`
-//     }
-//   }
-// };
-//
-// bear.eatSmall = bear.feed(5);
-
-// module.exports = {
-//   bear:bear
-// }
-
-//END OF NEW CODE
-
-// The code below is what the file looked like after completing this lesson:
-// https://www.learnhowtoprogram.com/javascript/asynchrony-and-apis/exploring-asynchrony-with-setinterval-and-settimeout
-//
-//START OF OLD CODE
-//
-// import { Hiker } from './../src/hiker.js';
-//
-// END OF OLD CODE

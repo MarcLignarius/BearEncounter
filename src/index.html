@@ -6,22 +6,30 @@
 </head>
 <body>
   <div class="container">
+    <!-- BEGIN header: The header is visible at first, but hidden when the game ends. -->
     <div class="mainTitle">
       <h1 style="text-align:center">BEAR ENCOUNTER</h1>
       <h3 style="text-align:center">Throw food at the bear to keep it at a distance.</h3>
       <h3 style="text-align:center">Use your shotgun to wound the bear and scare it away.</h3>
     </div>
+    <!-- END header -->
+    <!-- BEGIN hikerDead: This div appears if the bear kills the hikers. -->
     <div class="hikerDead">
       <h1 style="text-align: center">YOU ARE OUT OF AMMO AND FOOD.</h1>
       <h1 style="text-align: center">You are now bear food. Sorry. Sucks to be you.</h1>
       <img id="angryBear" alt="an angry bear">
     </div>
+    <!-- END hikerDear -->
+    <!-- BEGIN bearDead: This div appears if the hikers scare the bear away. -->
     <div class="bearDead">
       <h1 style="text-align: center">You have wounded the bear, and it is now retreating.</h1><br>
       <h1 style="text-align: center">YOU LIVE ANOTHER DAY.</h1>
       <img id="sadBear" alt="a sad bear">
     </div>
+    <!-- END bearDead -->
+    <!-- BEGIN game area -->
     <div class="row">
+      <!-- BEGIN bear stats: this section shows the bear and its stats -->
       <div class="col-md-4">
         <div class="bear">
           <img id="idleBear" class="center" alt="an idle bear">
@@ -29,6 +37,8 @@
           <h3 style="text-align: center">Satisfaction Level: <span id="hunger"></span></h3>
         </div>
       </div>
+      <!-- END bear stats -->
+      <!-- BEGIN actions: this section holds the buttons for shooting and feeding the bear. -->
       <div class="col-md-4">
         <div id="space">
         </div>
@@ -43,24 +53,27 @@
           <button class="btn btn-dark" name="granolaBar" id="granolaBarButton">
             <label for="granolaBar">Feed granola bar</label>
           </button><br>
-          <button class="btn btn-dark" name="peanutButterSandwich" id="peanutButterSandwichButton">
-            <label for="peanutButterSandwich">Feed sandwich</label>
+          <button class="btn btn-dark" name="sandwich" id="sandwichButton">
+            <label for="sandwich">Feed sandwich</label>
           </button><br>
-          <button class="btn btn-dark" name="bodyPart" id="bodyPartButton">
-            <label for="bodyPart">Feed body part</label>
+          <button class="btn btn-dark" name="carcass" id="carcassButton">
+            <label for="carcass">Feed carcass</label>
           </button>
         </div>
       </div>
+      <!-- END actions -->
+      <!-- BEGIN Hikers stats: this section shows the hikers and their stats. -->
       <div class="col-md-4">
         <div class="hiker">
           <img id="hiker" class="center" alt="hikers">
           <h3 style="text-align: center">Shotgun Ammo: <span id="shotgun"></span></h3>
           <h3 style="text-align: center">Trail Mix: <span id="trailMix"></span></h3>
           <h3 style="text-align: center">Granola Bar: <span id="granolaBar"></span></h3>
-          <h3 style="text-align: center">Peanut butter sandwich: <span id="peanutButterSandwich"></span></h3>
-          <h3 style="text-align: center">Body part: <span id="bodyPart"></span></h3>
+          <h3 style="text-align: center">Peanut butter sandwich: <span id="sandwich"></span></h3>
+          <h3 style="text-align: center">Carcass: <span id="carcass"></span></h3>
         </div>
       </div>
+      <!-- END Hikers stats -->
     </div>
   </div>
 </body>
