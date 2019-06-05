@@ -18,13 +18,13 @@
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
 | If user clicks "Shoot Bear", the bear's Health Points will drop between 0 and 50 | Click Shoot Bear | Health Points: 100 => 60*|
-| If bear's Health Points reach zero, the bear is wounded and walks away | Health Points <= 0 | "You have wounded the bear, and it is now retreating. YOU LIVE ANOTHER DAY."|
+| If bear's Health Points reach zero, the bear is wounded and walks away | Health Points <= 0 | "You have wounded the bear, and it is now retreating. You grab your phone and share an Instragram story."|
 | If user does nothing, bear's Satisfaction Level goes down by 1 every second. | User does nothing | Satisfaction Level: 10 => 9 after 1 second.|
 | If user clicks "Feed trail mix", the bear's Satisfaction Level will go up by 3.  | Click Feed trail mix | Satisfaction Level: 10 => 13|
 | If user clicks "Feed granola bar", the bear's Satisfaction Level will go up by 5.  | Click Feed granola bar | Satisfaction Level: 10 => 15|
 | If user clicks "Feed sandwich", the bear's Satisfaction Level will go up by 10.  | Click Feed sandwich | Satisfaction Level: 10 => 20|
 | If user clicks "Feed carcass", the bear's Satisfaction Level will go up by 20.  | Click Feed carcass | Satisfaction Level: 10 => 30 |
-| If bear's Satisfaction Level reaches zero, the bear kills the user. | Satisfaction Level: 0 | "YOU ARE OUT OF AMMO AND FOOD. You are now bear food. Sorry. Sucks to be you." |
+| If bear's Satisfaction Level reaches zero, the bear kills the user. | Satisfaction Level: 0 | "You ran out of ammo and food. The bear mauls you to death and feasts on your lifeless corpse." |
 
 _*Number is random and may vary but should not exceed 50._
 
