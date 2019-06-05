@@ -1,17 +1,18 @@
-# HungryBear
+# Bear Encounter
 
 #### _JavaScript, 05.31.2019_
 
-#### By _Marc Davies_
+#### By _Marc Davies and Reese Lee_
 
 ## Description
 
-* _This program creates a hungry bear._
-* _The user must feed the bear or risk being eaten themselves._
+* _This program creates a hungry bear and a hiker._
+* _The hiker must shoot at the bear to wound it, and hopefully scare it away._
+* _The hiker can feed the bear to keep it at a distance._
 
 ## Installation and Setup
 * If you don't have it installed, download and install Node.js 12.3.1
-* `$ git clone https://github.com/MarcLignarius/HungryBear.git` This will clone the repository to your local machine.
+* `$ git clone https://github.com/MarcLignarius/BearEncounter.git` This will clone the repository to your local machine.
 * `$ npm install` This will allow you to have access to the CLI (command line interface) for webpack.
 * `$ npm run build`
 This will automatically build the bundle once. The entry file is `./src/script/index.js`, with production ready code (minified).
