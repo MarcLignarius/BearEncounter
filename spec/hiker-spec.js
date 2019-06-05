@@ -11,7 +11,7 @@ describe('Hiker', function() {
 
   it('should be dead if eaten by bear', function() {
     HungryBear.foodLevel = 0;
-    Linda.areYouDead();
+    Linda.isHikerDead();
     expect(Linda.alive).toEqual(false);
   });
 

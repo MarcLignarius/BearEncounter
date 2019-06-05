@@ -24,21 +24,29 @@ describe('HungryBear', function() {
   });
 
   it('should kill the hiker if the food level drops below zero', function() {
+    let hiker = new Hiker("Linda");
     fuzzy.foodLevel = 0;
-    expect(fuzzy.didYouGetEaten()).toEqual(true);
+    expect(hiker.isHikerDead()).toEqual(true);
   });
 
   it('should kill the hiker if 10 seconds pass without feeding', function() {
+    let hiker = new Hiker("Linda");
     jasmine.clock().tick(10001);
-    expect(fuzzy.didYouGetEaten()).toEqual(true);
+    expect(hiker.isHikerDead()).toEqual(true);
   });
 
-  it('should have its foodLevel go up by 2 when fed Trail Mix', function() {
+  it('should have its shotgun amount reduced by 1 when shooting the bear', function() {
+    let hiker = new Hiker("Linda");
+    fuzzy.shootBear(hiker);
+    expect(hiker.backpack["shotgun"]).toEqual(4);
+  });
+
+  it('should have its foodLevel go up by 3 when fed Trail Mix', function() {
     let hiker = new Hiker("Linda");
     fuzzy.foodLevel = 5;
     jasmine.clock().tick(7001);
     fuzzy.feedTrailMix(hiker);
-    expect(fuzzy.foodLevel).toEqual(0);
+    expect(fuzzy.foodLevel).toEqual(1);
   });
 
   it('should have its Trail Mix amount reduced by 1 when feeding a Trail Mix', function() {
@@ -47,12 +55,12 @@ describe('HungryBear', function() {
     expect(hiker.backpack["trailMix"]).toEqual(4);
   });
 
-  it('should have its foodLevel go up by 3 when fed a Granola Bar', function() {
+  it('should have its foodLevel go up by 5 when fed a Granola Bar', function() {
     let hiker = new Hiker("Linda");
     fuzzy.foodLevel = 8;
     jasmine.clock().tick(7001);
     fuzzy.feedGranolaBar(hiker);
-    expect(fuzzy.foodLevel).toEqual(4);
+    expect(fuzzy.foodLevel).toEqual(6);
   });
 
   it('should have its Granola Bar amount reduced by 1 when feeding a Granola Bar', function() {
@@ -61,33 +69,32 @@ describe('HungryBear', function() {
     expect(hiker.backpack["granolaBar"]).toEqual(2);
   });
 
-  it('should have its foodLevel go up by 4 when fed a Peanut Butter Sandwich', function() {
+  it('should have its foodLevel go up by 10 when fed a sandwich', function() {
     let hiker = new Hiker("Linda");
     fuzzy.foodLevel = 2;
     jasmine.clock().tick(3001);
-    fuzzy.feedGranolaBar(hiker);
-    expect(fuzzy.foodLevel).toEqual(2);
+    fuzzy.feedSandwich(hiker);
+    expect(fuzzy.foodLevel).toEqual(9);
   });
 
-  it('should have its Peanut Butter Sandwich amount reduced by 1 when feeding a Peanut Butter Sandwich', function() {
+  it('should have its sandwich amount reduced by 1 when feeding a sandwich', function() {
     let hiker = new Hiker("Linda");
-    fuzzy.feedPeanutButterSandwich(hiker);
-    expect(hiker.backpack["peanutButterSandwich"]).toEqual(2);
+    fuzzy.feedSandwich(hiker);
+    expect(hiker.backpack["sandwich"]).toEqual(2);
   });
 
-  it('should have its foodLevel go up by 4 when fed a Body Part', function() {
+  it('should have its foodLevel go up by 20 when fed a carcass', function() {
     let hiker = new Hiker("Linda");
     fuzzy.foodLevel = 1;
     jasmine.clock().tick(6001);
-    fuzzy.feedBodyPart(hiker);
-    expect(fuzzy.foodLevel).toEqual(3);
+    fuzzy.feedCarcass(hiker);
+    expect(fuzzy.foodLevel).toEqual(15);
   });
 
-  it('should have its body parts amount reduced by 1 when feeding a body part', function() {
+  it('should have its carcass amount reduced by 1 when feeding a carcass', function() {
     let hiker = new Hiker("Linda");
-    fuzzy.feedBodyPart(hiker);
-    expect(hiker.backpack["bodyParts"]).toEqual(3);
+    fuzzy.feedCarcass(hiker);
+    expect(hiker.backpack["carcass"]).toEqual(3);
   });
+
 });
-//
-//END OF OLD CODE
